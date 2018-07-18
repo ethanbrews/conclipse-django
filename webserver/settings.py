@@ -25,7 +25,9 @@ SECRET_KEY = os.environ.get('DJANGO_TOKEN', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [] if DEBUG else ['.conclipse.co.uk']
+
+OFFLINE = True
 
 
 # Application definition
@@ -54,7 +56,7 @@ ROOT_URLCONF = 'webserver.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -104,6 +106,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 TIME_ZONE = 'UTC'
 

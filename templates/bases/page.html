@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        header {
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                100% 100%,
+                0 calc(100% - 12vw)
+            );
+            min-height: 85vh;
+            z-index: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background: #f12711; /* fallback for old browsers */
+            background: -webkit-linear-gradient(120deg, #f12711, #f5af19); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(120deg, #f12711, #f5af19); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+        body {
+            background-color: #1d1e2c;
+            color: #f0f0f0;
+            position: relative;
+            width: 100%;
+        }
+        main {
+            position: absolute;
+            width: 100%;
+            top: 60vh;
+            z-index: 100;
+        }
+        .card {
+            min-height: 100px;
+            display:inline-block;
+            padding: 30px;
+            min-width: 100px;
+            background-color: #1d1e2c;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        }
+    </style>
+</head>
+<body>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
